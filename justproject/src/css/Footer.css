@@ -1,0 +1,29 @@
+.footer {
+  margin-top: auto;
+  padding: 1.25rem 2rem;
+  border-top: 1px solid var(--color-border);
+  background: rgba(10, 10, 15, 0.6);
+}
+
+.footer-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-text {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.footer-link {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color var(--transition-fast);
+}
+
+.footer-link:hover {
+  color: var(--color-accent-hover);
+}

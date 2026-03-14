@@ -16,3 +16,12 @@ export const searchMovies = async (query) => {
   const data = await response.json();
   return data.results;
 };
+
+export const getMovieDetails = async (id) => {
+  const response = await fetch(
+    `${BASE_URL}/movie/${id}?api_key=${API_KEY}&append_to_response=credits,videos`
+  );
+  const data = await response.json();
+  if (data.success === false) throw new Error(data.status_message || "Movie not found");
+  return data;
+};

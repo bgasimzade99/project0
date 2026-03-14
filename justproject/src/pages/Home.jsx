@@ -37,7 +37,7 @@ function Home() {
         setError(null)
     } catch (err) {
         console.log(err)
-        setError("Failed to search movies...")
+        setError("Search failed...")
     } finally {
         setLoading(false)
     }

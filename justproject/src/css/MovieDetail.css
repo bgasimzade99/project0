@@ -1,0 +1,256 @@
+.movie-detail {
+  min-height: 60vh;
+  animation: detailFadeIn 0.5s ease-out;
+}
+
+@keyframes detailFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.movie-detail-loading,
+.movie-detail-error {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--color-text-muted);
+}
+
+.movie-detail-error h2 {
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.movie-detail-hero {
+  position: relative;
+  background: var(--color-bg-elevated);
+  background-size: cover;
+  background-position: center;
+  min-height: 70vh;
+  display: flex;
+  align-items: flex-end;
+}
+
+.movie-detail-backdrop {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    var(--color-bg) 0%,
+    transparent 40%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+}
+
+.movie-detail-hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 2.5rem;
+  padding: 3rem max(2rem, calc((100vw - 1400px) / 2));
+  width: 100%;
+  align-items: flex-end;
+}
+
+.movie-detail-poster-wrap {
+  flex-shrink: 0;
+  width: 280px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+.movie-detail-poster {
+  width: 100%;
+  display: block;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+}
+
+.movie-detail-info {
+  flex: 1;
+  padding-bottom: 0.5rem;
+}
+
+.movie-detail-info h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
+
+.movie-detail-info .tagline {
+  font-style: italic;
+  color: var(--color-text-muted);
+  margin-bottom: 1rem;
+}
+
+.movie-detail-meta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+.movie-detail-meta .rating {
+  color: #fbbf24;
+}
+
+.genres {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+
+.genre-tag {
+  padding: 0.35rem 0.75rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+}
+
+.overview {
+  max-width: 700px;
+  line-height: 1.7;
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+  opacity: 0.95;
+}
+
+.movie-detail-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.favorite-detail-btn,
+.trailer-btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  transition: all var(--transition-smooth);
+}
+
+.favorite-detail-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+.favorite-detail-btn:hover,
+.favorite-detail-btn.active {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: white;
+}
+
+.trailer-btn {
+  background: var(--color-accent);
+  color: white;
+  text-decoration: none;
+}
+
+.trailer-btn:hover {
+  background: var(--color-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--color-accent-glow);
+}
+
+.cast-section {
+  padding: 3rem max(2rem, calc((100vw - 1400px) / 2));
+}
+
+.cast-section h3 {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.cast-list {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.cast-list::-webkit-scrollbar {
+  height: 6px;
+}
+
+.cast-list::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+
+.cast-item {
+  flex-shrink: 0;
+  width: 140px;
+  text-align: center;
+}
+
+.cast-item img,
+.cast-placeholder {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 0.5rem;
+  display: block;
+}
+
+.cast-placeholder {
+  background: var(--color-surface);
+}
+
+.cast-name {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.cast-role {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.movie-detail-back-nav {
+  padding: 2rem max(2rem, calc((100vw - 1400px) / 2));
+}
+
+.back-link {
+  color: var(--color-text-muted);
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+.back-link:hover {
+  color: var(--color-accent);
+}
+
+@media (max-width: 768px) {
+  .movie-detail-hero-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .movie-detail-poster-wrap {
+    width: 200px;
+  }
+
+  .movie-detail-meta,
+  .genres {
+    justify-content: center;
+  }
+
+  .movie-detail-actions {
+    justify-content: center;
+  }
+
+  .overview {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
