@@ -23,6 +23,7 @@ function NavBar() {
                 <NavLink to="/" end className={({ isActive }) => "nav-link" + (isActive ? " active" : "")}>Home</NavLink>
                 <NavLink to="/favorites" className={({ isActive }) => "nav-link" + (isActive ? " active" : "")}>Favorites</NavLink>
                 <NavLink to="/about" className={({ isActive }) => "nav-link" + (isActive ? " active" : "")}>About</NavLink>
+                <NavLink to="/contact" className={({isActive})=> "nav-link" + (isActive ? "active": "")}>Contact</NavLink>
             </div>
         </nav>
     );
